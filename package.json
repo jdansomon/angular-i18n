@@ -4,9 +4,25 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:fr": "ng serve --configuration=fr",
+    "start:de": "ng serve --configuration=de",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "build:fr": "ng build --configuration=fr",
+    "build:de": "ng build --configuration=de",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "xliffmerge": "./node_modules/ngx-i18nsupport/dist/xliffmerge",
+    "i18n:extract": "ng extract-i18n --output-path src/locale --format xlf && xliffmerge"
+  },
+  "xliffmergeOptions": {
+    "srcDir": "src/locale",
+    "genDir": "src/locale",
+    "defaultLanguage": "en",
+    "languages": [
+      "fr",
+      "de"
+    ]
   },
   "private": true,
   "dependencies": {
